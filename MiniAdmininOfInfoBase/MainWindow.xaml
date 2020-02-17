@@ -1,0 +1,33 @@
+﻿<Window x:Class="MiniAdmininOfInfoBase.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MiniAdmininOfInfoBase"
+        mc:Ignorable="d"
+        Title="Основные действия над информационной базой" Height="210.899" Width="601.362" Topmost="True" ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="539*"/>
+            <ColumnDefinition Width="18*"/>
+            <ColumnDefinition Width="37*"/>
+        </Grid.ColumnDefinitions>
+        <Button Content="Настройки" Margin="470,0,25,79" VerticalAlignment="Bottom" Click="Button_Click" Height="26" Grid.ColumnSpan="3">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button Content="Help" Margin="470,0,25,45" VerticalAlignment="Bottom"  Grid.ColumnSpan="3"   Height="26" Click="ButtonHelp_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <CheckBox Content="Использовать логин и пароль из настроек" HorizontalAlignment="Left" Margin="10,118,0,0" VerticalAlignment="Top" Width="296" />
+        <Button Content="Выход" VerticalAlignment="Bottom" Margin="470,0,25,11" Height="26" Grid.ColumnSpan="3" Click="ButtonExit_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+
+    </Grid>
+</Window>
