@@ -7,17 +7,22 @@
         mc:Ignorable="d"
         Title="Settings" Height="282" Width="409" ResizeMode="NoResize">
     <Grid HorizontalAlignment="Left" Height="171" Margin="10,10,0,0" VerticalAlignment="Top" Width="364">
-        <Label HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="350" Content="Укажите путь к исполняющему файлу &quot;1cv8.exe&quot;:" FontSize="14" FontWeight="Bold"/>
-        <TextBox Name="OneC_Path" HorizontalAlignment="Left" Height="23" Margin="0,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="360"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="40*"/>
+            <ColumnDefinition Width="51*"/>
+        </Grid.ColumnDefinitions>
+        <Label HorizontalAlignment="Left" Margin="0,-5,0,0" VerticalAlignment="Top" Width="350" Content="Укажите путь к исполняющему файлу &quot;1cv8.exe&quot;:" FontSize="14" FontWeight="Bold" Grid.ColumnSpan="2"/>
+        <TextBox Name="OneC_Path" HorizontalAlignment="Left" Height="49" Margin="0,29,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="320" Grid.ColumnSpan="2"/>
         <Label Content="Имя пользователя:" HorizontalAlignment="Left" Margin="0,106,0,0" VerticalAlignment="Top" Width="145" FontSize="14"/>
-        <TextBox Name="UserName" HorizontalAlignment="Left"  Margin="150,106,0,0" Padding="2,2,5,5" MaxHeight="25" MaxLength="25" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="210"/>
+        <TextBox Name="UserName" HorizontalAlignment="Left"  Margin="150,106,0,0" Padding="2,2,5,5" MaxHeight="25" MaxLength="25" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="210" Grid.ColumnSpan="2"/>
         <Label Content="Пароль:" HorizontalAlignment="Left" Margin="0,135,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <PasswordBox Name="UserPassword" HorizontalAlignment="Left" Height="23" Margin="150,141,0,0" Padding="2,2,5,5" MaxHeight="25" VerticalAlignment="Top" Width="210"/>
-        <Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" Margin="0,68,0,107" HorizontalAlignment="Left" Width="364" />
-        <Label Content="Параметры авторизации по умолчанию:" HorizontalAlignment="Left" Margin="40,75,0,0" VerticalAlignment="Top" Width="300" FontWeight="Bold"/>
-        <Button Content="Отмена" HorizontalAlignment="Left" Height="25" Margin="225,180,0,-34" VerticalAlignment="Top" Width="135" Click="Button_Click_Cancel"/>
-        <Button Content="Сохранить" HorizontalAlignment="Left" Height="25" Margin="55,180,0,-34" VerticalAlignment="Top" Width="135" FontWeight="Bold"  Click="Button_Click_Save"/>
-        <Label Content="powered by A2, 2020" HorizontalAlignment="Left" Margin="229,210,0,-64" VerticalAlignment="Top" Height="25" Width="131" FontStretch="UltraCondensed" FontStyle="Italic" FontWeight="Bold" TextOptions.TextFormattingMode="Display" TextOptions.TextHintingMode="Animated"/>
+        <PasswordBox Name="UserPassword" HorizontalAlignment="Left" Height="23" Margin="150,141,0,0" Padding="2,2,5,5" MaxHeight="25" VerticalAlignment="Top" Width="210" Grid.ColumnSpan="2"/>
+        <Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" Margin="0,83,0,87" HorizontalAlignment="Left" Width="364" Grid.ColumnSpan="2" />
+        <Label Content="Параметры авторизации по умолчанию:" HorizontalAlignment="Left" Margin="40,78,0,0" VerticalAlignment="Top" Width="300" FontWeight="Bold" Grid.ColumnSpan="2"/>
+        <Button Content="Отмена" HorizontalAlignment="Left" Height="25" Margin="65,180,0,-34" VerticalAlignment="Top" Width="135" Click="Button_Click_Cancel" Grid.Column="1"/>
+        <Button Content="Сохранить" HorizontalAlignment="Left" Height="25" Margin="55,180,0,-34" VerticalAlignment="Top" Width="135" FontWeight="Bold"  Click="Button_Click_Save" Grid.ColumnSpan="2"/>
+        <Label Content="powered by A2, 2020" HorizontalAlignment="Left" Margin="69,210,0,-64" VerticalAlignment="Top" Height="25" Width="131" FontStretch="UltraCondensed" FontStyle="Italic" FontWeight="Bold" TextOptions.TextFormattingMode="Display" TextOptions.TextHintingMode="Animated" Grid.Column="1"/>
+        <Button Name="Browse" Content=". . ." Grid.Column="1" HorizontalAlignment="Left" Margin="165,29,0,0" Padding="0,0,0,5" VerticalAlignment="Top" Width="35" Height="49" Click="Browse_Click"/>
 
     </Grid>
 

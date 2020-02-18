@@ -24,12 +24,34 @@ namespace MiniAdmininOfInfoBase
         public Settings()
         {
             InitializeComponent();
+
+            loadValueOfSettings();
         }
+
+        private void loadValueOfSettings()
+        {
+            if (Properties.Settings.Default.OneC_path.Length > 0)
+            {
+                OneC_Path.Text = Properties.Settings.Default.OneC_path;
+            }
+
+            if (Properties.Settings.Default.UserName.Length > 0)
+            {
+                UserName.Text = Properties.Settings.Default.UserName;
+            }
+
+            if (Properties.Settings.Default.Password.Length > 0)
+            {
+                UserPassword.Password = Properties.Settings.Default.Password;
+            }
+        }
+
         //public void ShowViewModel()
         //{
         //    MessageBox.Show(ViewModel);
         //}
 
+     
         public void OneC_PathIsEmpty(string Description)
         {
             MessageBox.Show(Description,"Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -51,12 +73,12 @@ namespace MiniAdmininOfInfoBase
             
             if (UserName.Text.Length != 0)
             {
-                Properties.Settings.Default.UserName = UserPassword.Password;
+                Properties.Settings.Default.UserName = UserName.Text;
             }
 
             if (UserPassword.Password.Length !=0)
             {
-                Properties.Settings.Default.Password = UserName.Text;
+                Properties.Settings.Default.Password = UserPassword.Password;
             }
 
             Properties.Settings.Default.Save();
@@ -64,6 +86,19 @@ namespace MiniAdmininOfInfoBase
 
         }
 
+        private void Browse_Click(object sender, RoutedEventArgs e)
+        {
+            Microsoft.Win32.OpenFileDialog oneCPathDialog = new Microsoft.Win32.OpenFileDialog();
+            oneCPathDialog.Filter = "1cv8.exe (*.exe)|1cv8.exe";
+            oneCPathDialog.FilterIndex = 2;
+
+            Nullable<bool> result = oneCPathDialog.ShowDialog();
+
+            if (result == true)
+            {
+                OneC_Path.Text = oneCPathDialog.FileName.Replace( "\\\\", "\\" );
+            }
+        }
     }
 
 }
